@@ -24,7 +24,7 @@ jobs:
             script: |
                 export NVM_DIR="$HOME/.nvm"
                 source "$NVM_DIR/nvm.sh"
-                cd ci-bookshow/ && git pull
+                cd bookings/ && git pull
                 pnpm install
                 pnpm run build
                 pm2 restart fe-server
