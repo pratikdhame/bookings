@@ -1,0 +1,32 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - "production"
+
+jobs:
+  redploy_everything:
+    runs-on: ubuntu-latest
+    name: Deploying everything to the staging cluster
+
+    steps:
+        - name: Checkout the code
+          uses: actions/checkout@v2
+
+        - name: Execute remote SSH commands using SSH key
+          uses: appleboy/ssh-action@v1
+          with:
+            host: 13.233.153.179
+            username: ubuntu
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
+            port: 22
+            script: |
+                export NVM_DIR="$HOME/.nvm"
+                source "$NVM_DIR/nvm.sh"
+                cd ci-bookshow/ && git pull
+                pnpm install
+                pnpm run build
+                pm2 restart fe-server
+                pm2 restart ws-server
+                pm2 restart http-server

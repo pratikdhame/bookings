@@ -1,0 +1,2 @@
+[?9001h[?1004h[?25l[2J[m[H]0;C:\WINDOWS\system32\cmd.exe [?25h[30m[41m ERROR [m [31mENOTEMPTY: directory not empty, rmdir 'C:\Users\prati\.pnpm\.tools\pnpm\9.0.0\node_modules\pnpm\dist\node_modules\wrap-ansi-cjs\node_modules\ansi-regex'
+[?9001l[?1004l[mFor help, run: pnpm help run

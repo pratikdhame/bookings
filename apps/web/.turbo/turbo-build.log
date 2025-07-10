@@ -1,0 +1,4 @@
+[?9001h[?1004h[?25l[2J[m[H]0;C:\WINDOWS\system32\cmd.exe [?25h[?25l
+> web@0.1.0 build D:\DevOps\FourCIcertTesting\bookshow\apps\web
+> next build[5;1H[?25h^C[30m[41m ELIFECYCLE [m [31mCommand failed with exit code 3221225786.
+[?9001l[?1004l[m
