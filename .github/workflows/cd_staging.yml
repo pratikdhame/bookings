@@ -17,7 +17,7 @@ jobs:
         - name: Execute remote SSH commands using SSH key
           uses: appleboy/ssh-action@v1
           with:
-            host: 54.208.129.86
+            host: 13.233.89.193
             username: ubuntu
             key: ${{ secrets.SSH_PRIVATE_KEY }}
             port: 22
@@ -27,6 +27,6 @@ jobs:
                 cd bookings/ && git pull
                 pnpm install
                 pnpm build
-                pm2 restart fe-server
+                pm2 restart web-server
                 pm2 restart ws-server
                 pm2 restart http-server
